@@ -10,8 +10,7 @@ void main()
 	char str[25];
 	printf("Enter the string : ");
 	scanf("%s", str);
-	state1(str, 0);
-	if(state1(str,0)==0)
+	if(state1(str, 0)==0)
 	{
 		printf("'%s' --> VALID STRING\n", str);
 	}
