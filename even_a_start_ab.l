@@ -1,6 +1,6 @@
 
 %%
-abb*ab*[ab*a]*b* printf("Valid String");
+abb*ab*(ab*a)*b* printf("Valid String");
 (.)* printf("Invalid String");
 %%
 int yywrap(void){}
