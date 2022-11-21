@@ -29,7 +29,7 @@ int state1(char str[25], int i)
 	{
 		state2(str, i+1);
 	}
-    else if(str[i]=='2' || str[i]=='5' || str[i]=='8')
+    	else if(str[i]=='2' || str[i]=='5' || str[i]=='8')
 	{
 		state3(str, i+1);
 	}
@@ -49,7 +49,7 @@ int state2(char str[25], int i)
 	{
 		state3(str, i+1);
 	}
-    else if(str[i]=='2' || str[i]=='5' || str[i]=='8')
+    	else if(str[i]=='2' || str[i]=='5' || str[i]=='8')
 	{
 		state1(str, i+1);
 	}
@@ -69,7 +69,7 @@ int state3(char str[25], int i)
 	{
 		state1(str, i+1);
 	}
-    else if(str[i]=='2' || str[i]=='5' || str[i]=='8')
+    	else if(str[i]=='2' || str[i]=='5' || str[i]=='8')
 	{
 		state2(str, i+1);
 	}
