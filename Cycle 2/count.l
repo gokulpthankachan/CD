@@ -4,14 +4,14 @@
     int ccount = 0;
 %}
 %%
-[ ] wcount++;ccount++;
-[\n]. lcount++;wcount++;ccount++;
-(.) ccount++;
+[\n]    {lcount++;wcount++;}
+[\t' '] {wcount++;}
+[a-zA-Z]    {ccount++;}
 %%
 int yywrap(void){}
 int main()
 {
-    char *filename;
+    char filename[20];
     FILE *ptr;
     printf("Enter the filename : ");
     scanf("%s",filename);
@@ -19,6 +19,7 @@ int main()
     if(ptr==NULL)
     {
         printf("Error occured");
+        return 0;
     }
     yyin=ptr;
     yylex();
