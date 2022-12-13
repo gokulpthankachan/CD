@@ -75,7 +75,7 @@ void F(char str[100])
 void main()
 {
     char str[100];
-    printf("Enter string\n");
+    printf("Enter the string : ");
     scanf("%s",str);
     int len = strlen(str);
     str[len] = '$';
