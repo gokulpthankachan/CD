@@ -6,6 +6,7 @@
 [0-9]+ {printf("Integer Literal %s \n",yytext);}
 "//".*
 [/][*][^*]*[*]+([^*/][^*]*[*]+)*[/]
+.
 %%
 int yywrap(){}
 int main(){
