@@ -7,75 +7,100 @@
 // T' -> * F T' | e
 // F -> ( E ) | id
 
-void E(char str[100]);
-void EPrime(char str[100]);
-void T(char str[100]);
-void TPrime(char str[100]);
-void F(char str[100]);
+int E(char str[100]);
+int EPrime(char str[100]);
+int T(char str[100]);
+int TPrime(char str[100]);
+int F(char str[100]);
 
 int i = 0;
 
-void E(char str[100])
+int E(char str[100])
 {
-    T(str);
-    EPrime(str);
+    if(T(str))
+        if(EPrime(str))
+            return 1;
+        return 0;
+    return 0;
 }
 
-void EPrime(char str[100])
+int EPrime(char str[100])
 {
     if (str[i] == '+')
     {
         i++;
-        T(str);
-        EPrime(str);
+        if(T(str))
+            if(EPrime(str))
+                return 1;
+            return 0;
+        return 0; 
     }
     else
     {
-        return;
+        return 1;
     }
 }
 
-void T(char str[100])
+int T(char str[100])
 {
-    F(str);
-    TPrime(str);
+    if(F(str))
+        if(TPrime(str))
+            return 1;
+        return 0;
+    return 0;
 }
 
-void TPrime(char str[100])
+int TPrime(char str[100])
 {
     if (str[i] == '*')
     {
         i++;
-        F(str);
-        TPrime(str);
+        if(F(str))
+            if(TPrime(str))
+                return 1;
+            return 0;
+        return 0;
     }
     else
     {
-        return;
+        return 1;
     }
 }
 
-void F(char str[100])
+int F(char str[100])
 {
     if (str[i] == '(')
     {
         i++;
-        E(str);
-        if (str[i] == ')')
+        if(E(str))
         {
-            i++;
-        }
+            if (str[i] == ')')
+            {
+                i++;
+            }
+        }  
     }
-    else if (isalnum(str[i]))
+    else if (isalpha(str[i]))
     {
         i++;
+        return 1;
+    }
+    else if(isdigit(str[i]) == 1)
+    {
+		while(isdigit(str[i]))
+			i++;
+		return 1;	
+	}
+    else
+    {
+        return 0;
     }
 }
 
 void main()
 {
     char str[100];
-    printf("Enter the string : ");
+    printf("Enter string\n");
     scanf("%s",str);
     int len = strlen(str);
     str[len] = '$';
