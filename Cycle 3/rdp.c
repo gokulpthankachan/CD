@@ -85,7 +85,7 @@ int F(char str[100])
         i++;
         return 1;
     }
-    else if(isdigit(str[i]) == 1)
+    else if(isdigit(str[i]))
     {
 		while(isdigit(str[i]))
 			i++;
