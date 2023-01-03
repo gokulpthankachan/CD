@@ -18,10 +18,14 @@ int i = 0;
 int E(char str[100])
 {
     if(T(str))
+    {
         if(EPrime(str))
             return 1;
-        return 0;
-    return 0; 
+        else
+            return 0;
+    }
+    else    
+        return 0; 
 }
 
 int EPrime(char str[100])
@@ -30,10 +34,14 @@ int EPrime(char str[100])
     {
         i++;
         if(T(str))
+        {
             if(EPrime(str))
                 return 1;
-            return 0;
-        return 0; 
+            else
+                return 0;
+        }
+        else
+            return 0; 
     }
     else
     {
@@ -44,10 +52,14 @@ int EPrime(char str[100])
 int T(char str[100])
 {
     if(F(str))
+    {
         if(TPrime(str))
             return 1;
+        else
+            return 0;
+    }
+    else
         return 0;
-    return 0;
 }
 
 int TPrime(char str[100])
@@ -56,10 +68,14 @@ int TPrime(char str[100])
     {
         i++;
         if(F(str))
+        {
             if(TPrime(str))
                 return 1;
+            else
+                return 0;
+        }
+        else
             return 0;
-        return 0;
     }
     else
     {
